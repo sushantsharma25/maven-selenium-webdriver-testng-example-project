@@ -21,6 +21,7 @@ import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.remote.*;
 import org.testng.Assert;
 import java.net.*;
+import java.util.concurrent.TimeUnit;
 import org.testng.annotations.Test;
 public class pkb {
 @Test
@@ -30,7 +31,7 @@ public void testgooglrsearch() throws MalformedURLException{
 //FirefoxOptions options = new FirefoxOptions();
 //options.addArguments("-headless");
 //WebDriver driver = new RemoteWebDriver(new URL("http://52.254.17.79:4444/wd/hub"),options);
-WebDriver driver = new RemoteWebDriver(new URL("http://52.254.17.79:4444/wd/hub"),new FirefoxOptions());
+RemoteWebDriver driver = new RemoteWebDriver(new URL("http://52.254.17.79:4444/wd/hub"),new FirefoxOptions());
 driver.get("http://www.google.com");
 driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 driver.findElement(By.name("q")).sendKeys("Selenium");
